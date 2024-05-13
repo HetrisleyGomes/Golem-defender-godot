@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3jfk3wgw3i5l"]
+
+[ext_resource type="PackedScene" uid="uid://b8cas76b38cq2" path="res://player/knight.tscn" id="1_5ca10"]
+[ext_resource type="PackedScene" uid="uid://cmx5k1ao0b4iv" path="res://systems/mob_spawner.tscn" id="3_w7r6t"]
+[ext_resource type="PackedScene" uid="uid://cb0c6jkk7pbv4" path="res://UI/ui.tscn" id="4_celoh"]
+[ext_resource type="PackedScene" uid="uid://d2a6tq1tvebwb" path="res://misc/money.tscn" id="5_688wn"]
+[ext_resource type="PackedScene" uid="uid://dgvpy4mwvyge3" path="res://misc/meat.tscn" id="5_yyiuv"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Knight" parent="." instance=ExtResource("1_5ca10")]
+position = Vector2(186, 155)
+speed = null
+sword_damage = null
+ritual_damage = null
+health = null
+max_health = null
+
+[node name="MobSpawner" parent="." instance=ExtResource("3_w7r6t")]
+
+[node name="UI" parent="." instance=ExtResource("4_celoh")]
+
+[node name="meat" parent="." instance=ExtResource("5_yyiuv")]
+position = Vector2(132, 496)
+
+[node name="meat2" parent="." instance=ExtResource("5_yyiuv")]
+position = Vector2(478, 524)
+
+[node name="meat3" parent="." instance=ExtResource("5_yyiuv")]
+position = Vector2(944, 224)
+
+[node name="meat4" parent="." instance=ExtResource("5_688wn")]
+position = Vector2(798, 438)
+
+[node name="meat5" parent="." instance=ExtResource("5_688wn")]
+position = Vector2(484, 24)
+
+[node name="meat6" parent="." instance=ExtResource("5_688wn")]
+position = Vector2(1024, 548)

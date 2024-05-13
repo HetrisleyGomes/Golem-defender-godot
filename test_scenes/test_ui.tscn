@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3uuh6cl4hqmt"]
+
+[ext_resource type="PackedScene" uid="uid://b1crwel7ro7r5" path="res://player/archer.tscn" id="2_4xckd"]
+[ext_resource type="Texture2D" uid="uid://r8708r72uxts" path="res://addons/Tiny Swords/UI/Ribbons/Ribbon_Blue_3Slides.png" id="2_oxnlc"]
+[ext_resource type="PackedScene" uid="uid://m8dhdi8kj0n3" path="res://enemies/pawn.tscn" id="3_d0ouy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ayiq"]
+texture = ExtResource("2_oxnlc")
+texture_margin_left = 46.6507
+texture_margin_top = 7.93063
+texture_margin_right = 47.1172
+texture_margin_bottom = 26.5909
+region_rect = Rect2(0, 0, 192, 64)
+
+[node name="test_ui" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -325.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_2ayiq")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = -20.5
+offset_right = -6.5
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Moedas: 500"
+
+[node name="Archer" parent="." instance=ExtResource("2_4xckd")]
+position = Vector2(521, 335)
+
+[node name="Pawn" parent="." instance=ExtResource("3_d0ouy")]
+position = Vector2(1033, 262)
+
+[node name="Pawn2" parent="." instance=ExtResource("3_d0ouy")]
+position = Vector2(1029, 422)
+
+[node name="Pawn3" parent="." instance=ExtResource("3_d0ouy")]
+position = Vector2(1175, 317)

@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=3 uid="uid://cb0c6jkk7pbv4"]
+
+[ext_resource type="Script" path="res://UI/game_ui.gd" id="1_7kspn"]
+[ext_resource type="Texture2D" uid="uid://r8708r72uxts" path="res://addons/Tiny Swords/UI/Ribbons/Ribbon_Blue_3Slides.png" id="1_gn0tb"]
+[ext_resource type="Texture2D" uid="uid://b4k7n5mttr7ny" path="res://addons/Tiny Swords/Resources/Resources/M_Idle_(NoShadow).png" id="3_i2th1"]
+[ext_resource type="Texture2D" uid="uid://1idljovclxel" path="res://addons/Tiny Swords/Resources/Resources/G_Idle_(NoShadow).png" id="4_l0mo5"]
+
+[sub_resource type="SystemFont" id="SystemFont_bpnv7"]
+font_names = PackedStringArray("Comic Sans MS")
+
+[sub_resource type="LabelSettings" id="LabelSettings_257pm"]
+font = SubResource("SystemFont_bpnv7")
+font_size = 32
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ayiq"]
+texture = ExtResource("1_gn0tb")
+texture_margin_left = 46.6507
+texture_margin_top = 7.93063
+texture_margin_right = 47.1172
+texture_margin_bottom = 26.5909
+region_rect = Rect2(0, 0, 192, 64)
+
+[sub_resource type="SystemFont" id="SystemFont_q2fp8"]
+font_names = PackedStringArray("Pokemon Solid")
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqwo2"]
+font = SubResource("SystemFont_q2fp8")
+font_size = 26
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m707"]
+atlas = ExtResource("3_i2th1")
+region = Rect2(32, 40, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0qht"]
+atlas = ExtResource("4_l0mo5")
+region = Rect2(32, 40, 64, 64)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_7kspn")
+
+[node name="TimerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_right = 48.5
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_257pm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_bottom = 74.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_2ayiq")
+
+[node name="MeatLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -27.0
+offset_right = -62.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_dqwo2")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MoedasLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -26.0
+offset_right = 55.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_dqwo2")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Texture_meat" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = -7.0
+offset_right = 159.0
+offset_bottom = 57.0
+texture = SubResource("AtlasTexture_4m707")
+
+[node name="Texture_money" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = -6.0
+offset_right = 269.0
+offset_bottom = 58.0
+texture = SubResource("AtlasTexture_j0qht")
