@@ -2,6 +2,8 @@ extends Node
 
 signal game_over
 
+var player_selected
+
 var player: Player
 var player_position: Vector2
 var is_game_over: bool = false
@@ -31,6 +33,6 @@ func reset():
 	time_elapsed = 0.0
 	time_elapsed_sring = "00:00"
 	meat_counter = 0
-	money
+	money = 0
 	for connection in game_over.get_connections():
 		game_over.disconnect(connection.callable)

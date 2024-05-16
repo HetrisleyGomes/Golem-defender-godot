@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3jfk3wgw3i5l"]
+[gd_scene load_steps=6 format=3 uid="uid://dhyrcygp61w3x"]
 
-[ext_resource type="PackedScene" uid="uid://b8cas76b38cq2" path="res://player/knight.tscn" id="1_5ca10"]
+[ext_resource type="PackedScene" uid="uid://csq3uwfget8ll" path="res://player/player.tscn" id="1_5ca10"]
 [ext_resource type="PackedScene" uid="uid://cmx5k1ao0b4iv" path="res://systems/mob_spawner.tscn" id="3_w7r6t"]
 [ext_resource type="PackedScene" uid="uid://cb0c6jkk7pbv4" path="res://UI/ui.tscn" id="4_celoh"]
 [ext_resource type="PackedScene" uid="uid://d2a6tq1tvebwb" path="res://misc/money.tscn" id="5_688wn"]
@@ -10,11 +10,6 @@
 
 [node name="Knight" parent="." instance=ExtResource("1_5ca10")]
 position = Vector2(186, 155)
-speed = null
-sword_damage = null
-ritual_damage = null
-health = null
-max_health = null
 
 [node name="MobSpawner" parent="." instance=ExtResource("3_w7r6t")]
 

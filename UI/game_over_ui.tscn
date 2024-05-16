@@ -142,20 +142,24 @@ _data = {
 script = ExtResource("1_sd5t7")
 
 [node name="Background" type="ColorRect" parent="."]
+layout_direction = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 5760.0
+offset_bottom = 3240.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.647059)
+metadata/_edit_use_anchors_ = true
 
 [node name="TopPanel" type="Panel" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -254.0
+offset_left = 322.0
 offset_top = 50.0
-offset_right = 254.0
+offset_right = 830.0
 offset_bottom = 153.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ycsxd")
@@ -182,10 +186,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -421.0
-offset_top = -24.0
-offset_right = 421.0
-offset_bottom = 184.0
+offset_left = 155.0
+offset_top = 300.0
+offset_right = 997.0
+offset_bottom = 508.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_sr7e2")

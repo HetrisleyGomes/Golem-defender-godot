@@ -1,7 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://cn5co4eqeeoaj"]
+[gd_scene load_steps=24 format=3 uid="uid://crvgy3082530b"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6nr0g"]
-[ext_resource type="PackedScene" uid="uid://b8cas76b38cq2" path="res://player/knight.tscn" id="1_wpuq2"]
 [ext_resource type="PackedScene" uid="uid://cmx5k1ao0b4iv" path="res://systems/mob_spawner.tscn" id="2_2f88n"]
 [ext_resource type="Texture2D" uid="uid://d3mwjycpi56hm" path="res://addons/Tiny Swords/Deco/03.png" id="2_lgq7x"]
 [ext_resource type="Texture2D" uid="uid://i5677dwfyv6s" path="res://addons/Tiny Swords/Deco/06.png" id="3_dd34h"]
@@ -10,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://kcv58imlehxb" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="4_m353j"]
 [ext_resource type="Texture2D" uid="uid://bswa2tkg631yx" path="res://addons/Tiny Swords/Resources/Trees/Tree.png" id="5_32l2a"]
 [ext_resource type="Texture2D" uid="uid://bifqxbgmy7av4" path="res://addons/Tiny Swords/Terrain/Water/Water.png" id="6_mis6i"]
+[ext_resource type="PackedScene" uid="uid://b1crwel7ro7r5" path="res://player/archer.tscn" id="10_2ct5g"]
 [ext_resource type="PackedScene" uid="uid://tuh72fm6w5qq" path="res://misc/tree.tscn" id="10_q7t8d"]
 [ext_resource type="Script" path="res://systems/difficulty_system.gd" id="11_6wmf5"]
+[ext_resource type="PackedScene" uid="uid://crp4y22mcsaef" path="res://player/knight.tscn" id="11_x5cvj"]
 [ext_resource type="PackedScene" uid="uid://cviq3h752k36a" path="res://UI/game_over_ui.tscn" id="12_nkorr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1rpdr"]
@@ -219,8 +220,21 @@ position = Vector2(1673, -881)
 [node name="Tree10" parent="Trees" instance=ExtResource("10_q7t8d")]
 position = Vector2(3817, -2081)
 
-[node name="Knight" parent="." instance=ExtResource("1_wpuq2")]
-position = Vector2(545, 334)
+[node name="Archer" parent="." instance=ExtResource("10_2ct5g")]
+position = Vector2(586, 336)
+
+[node name="RemoteTransform2D-Camera" type="RemoteTransform2D" parent="Archer"]
+remote_path = NodePath("../../Camera")
+update_rotation = false
+update_scale = false
+
+[node name="RemoteTransform2D-MobSpawner" type="RemoteTransform2D" parent="Archer"]
+remote_path = NodePath("../../MobSpawner")
+update_rotation = false
+update_scale = false
+
+[node name="Knight" parent="." instance=ExtResource("11_x5cvj")]
+position = Vector2(586, 336)
 
 [node name="RemoteTransform2D-Camera" type="RemoteTransform2D" parent="Knight"]
 remote_path = NodePath("../../Camera")
@@ -233,10 +247,10 @@ update_rotation = false
 update_scale = false
 
 [node name="MobSpawner" parent="." instance=ExtResource("2_2f88n")]
-position = Vector2(545, 334)
+position = Vector2(586, 336)
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(545, 334)
+position = Vector2(586, 336)
 
 [node name="UI" parent="." instance=ExtResource("3_sv5oq")]
 

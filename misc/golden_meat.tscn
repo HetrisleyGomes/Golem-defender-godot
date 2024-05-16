@@ -4,4 +4,4 @@
 
 [node name="golden_meat" instance=ExtResource("1_v86wj")]
 self_modulate = Color(2, 1, 0, 1)
-amount = 25
+amount = 20

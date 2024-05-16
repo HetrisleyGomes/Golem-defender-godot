@@ -1,0 +1,226 @@
+[gd_scene load_steps=23 format=3 uid="uid://cadu8w107534u"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_pv2qg"]
+[ext_resource type="Texture2D" uid="uid://r8708r72uxts" path="res://addons/Tiny Swords/UI/Ribbons/Ribbon_Blue_3Slides.png" id="1_ypwya"]
+[ext_resource type="Texture2D" uid="uid://ddvh4xk51ro7s" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="3_7fr5a"]
+[ext_resource type="Texture2D" uid="uid://ci57iy1iqf5h7" path="res://addons/Tiny Swords/UI/Banners/Carved_9Slides.png" id="3_mr3cj"]
+[ext_resource type="Texture2D" uid="uid://dukm77dt7vd1o" path="res://addons/Tiny Swords/Factions/Knights/Troops/Archer/Blue/Archer_Blue.png" id="4_6xa7k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5utn"]
+texture = ExtResource("1_ypwya")
+texture_margin_left = 48.0
+texture_margin_top = 8.0
+texture_margin_right = 48.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="SystemFont" id="SystemFont_wia4a"]
+font_names = PackedStringArray("Pokemon Solid")
+
+[sub_resource type="LabelSettings" id="LabelSettings_kacy7"]
+font = SubResource("SystemFont_wia4a")
+font_size = 36
+font_color = Color(0, 0, 0.482353, 1)
+outline_size = 12
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.572549)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd87i"]
+atlas = ExtResource("3_7fr5a")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytjsi"]
+atlas = ExtResource("3_7fr5a")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcvnv"]
+atlas = ExtResource("3_7fr5a")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsutp"]
+atlas = ExtResource("3_7fr5a")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykjjt"]
+atlas = ExtResource("3_7fr5a")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0efvc"]
+atlas = ExtResource("3_7fr5a")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gfbgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd87i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytjsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcvnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsutp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykjjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0efvc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c0g1"]
+atlas = ExtResource("4_6xa7k")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miyfk"]
+atlas = ExtResource("4_6xa7k")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pm5b"]
+atlas = ExtResource("4_6xa7k")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yx53"]
+atlas = ExtResource("4_6xa7k")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgty6"]
+atlas = ExtResource("4_6xa7k")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ohcf"]
+atlas = ExtResource("4_6xa7k")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8yop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c0g1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miyfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pm5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yx53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgty6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ohcf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pv2qg")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.407843, 0.215686, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -257.0
+offset_top = 100.0
+offset_right = 258.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x5utn")
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Container" parent="Panel/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/Container"]
+layout_mode = 2
+text = "Golem Defender"
+label_settings = SubResource("LabelSettings_kacy7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_Knight" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 327.0
+offset_top = 217.0
+offset_right = 545.0
+offset_bottom = 435.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_mr3cj")
+stretch_mode = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Button_Knight"]
+position = Vector2(110, 107)
+sprite_frames = SubResource("SpriteFrames_gfbgx")
+autoplay = "default"
+frame_progress = 0.229288
+
+[node name="Button_Archer" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 610.0
+offset_top = 218.0
+offset_right = 828.0
+offset_bottom = 436.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_mr3cj")
+stretch_mode = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Button_Archer"]
+position = Vector2(111, 109)
+sprite_frames = SubResource("SpriteFrames_o8yop")
+autoplay = "default"
+frame_progress = 0.149757
+flip_h = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Hetrisley Gomes 2024"
+
+[connection signal="button_down" from="Button_Knight" to="." method="_on_button_knight_button_down"]
+[connection signal="button_down" from="Button_Archer" to="." method="_on_button_archer_button_down"]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://b8cas76b38cq2"]
+[gd_scene load_steps=20 format=3 uid="uid://crp4y22mcsaef"]
 
-[ext_resource type="Script" path="res://player/knight.gd" id="1_qrgd3"]
-[ext_resource type="Texture2D" uid="uid://ddvh4xk51ro7s" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_r86kx"]
-[ext_resource type="PackedScene" uid="uid://cmc2jgcg2j585" path="res://misc/ritual.tscn" id="2_bc085"]
-[ext_resource type="PackedScene" uid="uid://bak6uup2cpgb" path="res://misc/skull.tscn" id="2_e2533"]
+[ext_resource type="Script" path="res://player/knight.gd" id="1_8fhnm"]
+[ext_resource type="PackedScene" uid="uid://cmc2jgcg2j585" path="res://misc/ritual.tscn" id="2_ddqh0"]
+[ext_resource type="PackedScene" uid="uid://bak6uup2cpgb" path="res://misc/skull.tscn" id="3_23a8r"]
+[ext_resource type="Texture2D" uid="uid://ddvh4xk51ro7s" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="4_gbyw4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sy01h"]
 radius = 18.0
@@ -208,14 +208,20 @@ bg_color = Color(0.792157, 0, 0.0666667, 1)
 
 [node name="Knight" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
-script = ExtResource("1_qrgd3")
+script = ExtResource("1_8fhnm")
+sword_damage = null
+speed = null
+attack_interval = null
+ritual_damage = null
 ritual_interval = 10.0
-ritual_scene = ExtResource("2_bc085")
-death_prefab = ExtResource("2_e2533")
+ritual_scene = ExtResource("2_ddqh0")
+health = null
+max_health = null
+death_prefab = ExtResource("3_23a8r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -30)
-texture = ExtResource("1_r86kx")
+texture = ExtResource("4_gbyw4")
 hframes = 6
 vframes = 8
 

@@ -1,12 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://b1crwel7ro7r5"]
+[gd_scene load_steps=19 format=3 uid="uid://csq3uwfget8ll"]
 
-[ext_resource type="Script" path="res://player/archer.gd" id="1_5pslr"]
-[ext_resource type="Texture2D" uid="uid://dukm77dt7vd1o" path="res://addons/Tiny Swords/Factions/Knights/Troops/Archer/Blue/Archer_Blue.png" id="2_7wrxg"]
-[ext_resource type="PackedScene" uid="uid://cmc2jgcg2j585" path="res://misc/ritual.tscn" id="2_w0rv5"]
-[ext_resource type="PackedScene" uid="uid://crdfqykypm0dx" path="res://player/arrow.tscn" id="2_xphau"]
-[ext_resource type="PackedScene" uid="uid://bak6uup2cpgb" path="res://misc/skull.tscn" id="3_gun5e"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_kmyen"]
+[ext_resource type="Texture2D" uid="uid://ddvh4xk51ro7s" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_r86kx"]
+[ext_resource type="PackedScene" uid="uid://cmc2jgcg2j585" path="res://misc/ritual.tscn" id="2_bc085"]
+[ext_resource type="PackedScene" uid="uid://bak6uup2cpgb" path="res://misc/skull.tscn" id="2_e2533"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0lg4t"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_sy01h"]
 radius = 18.0
 
 [sub_resource type="Animation" id="Animation_2wu31"]
@@ -66,10 +65,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [32, 33, 34, 35, 36, 37, 38]
+"values": [12, 13, 14, 15, 16, 17]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -78,7 +77,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0.3),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -179,7 +178,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [8, 9, 10, 11, 12, 13]
+"values": [6, 7, 8, 9, 10, 11]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a2pdd"]
@@ -204,24 +203,21 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5t7b"]
 bg_color = Color(0.792157, 0, 0.0666667, 1)
 
-[node name="Archer" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D"]
 motion_mode = 1
-script = ExtResource("1_5pslr")
-arrow_prefab = ExtResource("2_xphau")
-ritual_damage = 2
-ritual_interval = 20.0
-ritual_scene = ExtResource("2_w0rv5")
-death_prefab = ExtResource("3_gun5e")
+script = ExtResource("1_kmyen")
+ritual_scene = ExtResource("2_bc085")
+death_prefab = ExtResource("2_e2533")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -30)
-texture = ExtResource("2_7wrxg")
-hframes = 8
-vframes = 7
+texture = ExtResource("1_r86kx")
+hframes = 6
+vframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15)
-shape = SubResource("CircleShape2D_0lg4t")
+shape = SubResource("CircleShape2D_sy01h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
@@ -249,7 +245,3 @@ theme_override_styles/background = SubResource("StyleBoxFlat_cp1c0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_r5t7b")
 value = 50.0
 show_percentage = false
-
-[node name="Arrow_Marker" type="Marker2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(15, -25)
